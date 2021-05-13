@@ -1,0 +1,52 @@
+<!-- {{teamData.teams | json}} -->
+<h1>Opponent and games details for the next 4 matches <b>{{favTeam}}</b> will play</h1>
+<mat-accordion>
+
+  <mat-expansion-panel *ngFor="let data of dataSource">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+      #{{ data.id }}
+      </mat-panel-title>
+     
+      <mat-panel-description>
+        <!-- {{ panelOpenState ? "open" : "closed" }} -->
+       <b> {{ data.ateam }} - {{data.hteam}}</b>
+                
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    
+    <mat-panel-description>
+       
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Team-1</th>
+            <th scope="col">Team-2</th>
+            <th scope="col">Date</th>
+            <th scope="col">Localtime</th>
+            <th scope="col">Venue</th>
+            
+          </tr>
+        </thead>
+        <!-- {{dataSource | json}} -->
+        <tbody>
+          <tr>
+            <th scope="row">{{ data.id }}</th>
+            <td>{{ data.ateam }}</td>
+            <td>{{ data.hteam }}</td>
+            <td>{{ data.date.split(" ")[0] }}</td>
+            <td>{{ data.date.split(" ")[1] }}</td>
+            <td>{{ data.venue }}</td>
+
+
+          </tr>
+        </tbody>
+      </table>
+
+    </mat-panel-description>
+    <!-- <p *ngFor="let subDay of day.subDay" class="grid5">
+        {{subDay.name}}
+      </p> -->
+  </mat-expansion-panel>
+</mat-accordion>

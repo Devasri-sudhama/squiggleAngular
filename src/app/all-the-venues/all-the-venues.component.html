@@ -1,0 +1,28 @@
+<h1>
+    The following venues where  <b>{{favTeam}}</b> team has won so far this season
+    
+      <!-- {{ dataSource | json }} -->
+    </h1>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Team-1</th>
+          <th scope="col">Team-2</th>
+          <th scope="col">Result</th>
+          <th scope="col">Venue</th>
+        </tr>
+      </thead>
+      <!-- {{dataSource | json}} -->
+      <tbody>
+        <tr *ngFor="let data of dataSource">
+          <th scope="row">{{ data.id }}</th>
+          <td>{{ data.ateam }}</td>
+          <td>{{ data.hteam }}</td>
+    
+          <td>{{ data.winner }}</td>
+          <td>{{ data.venue }}</td>
+        </tr>
+      </tbody>
+    </table>
+    

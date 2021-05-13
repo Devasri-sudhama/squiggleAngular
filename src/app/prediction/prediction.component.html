@@ -1,0 +1,55 @@
+<!-- <p>prediction works!</p>{{favTeam}}
+
+{{predictData | json}} -->
+
+<div style="width: 100%" class="center">
+  <div style="float: left; width: 33%;">
+  
+    <img src="cinqueterre.jpg" class="img-rounded" alt="Cinque Terre">
+  
+  
+  </div>
+  <div style="float: left; width: 33%;">
+    <h1>P</h1>
+    <circle-progress
+    [percent]="percentValue"
+    [radius]="100"
+    [subtitle]=""
+    [outerStrokeWidth]="16"
+    [innerStrokeWidth]="8"
+    [outerStrokeColor]="'#78C000'"
+    [innerStrokeColor]="'#C7E596'"
+    [animation]="true"    
+    [animationDuration]="300"             
+  ></circle-progress></div>
+  <div style="float: left; width: 33%;">Right Stuff</div>
+  <br style="clear: left;" />
+ </div>
+
+
+<h1>
+  Winning Probabilty of <b>{{favTeam}}</b> is <b>{{percentValue}}</b>
+
+  </h1>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Team</th>
+        <th scope="col">Team</th>
+        <th scope="col">Confidence</th>
+        <!-- <th scope="col">Venue</th> -->
+      </tr>
+    </thead>
+    <!-- {{dataSource | json}} -->
+    <tbody>
+      <tr *ngFor="let data of confidenceDetails">
+        <th scope="row">{{ data.gameid }}</th>
+        <td>{{ data.ateam }}</td>
+        <td>{{ data.hteam }}</td>
+  
+        <td>{{ data.hconfidence }}</td>
+        <!-- <td>{{ data.venue }}</td> -->
+      </tr>
+    </tbody>
+  </table>
